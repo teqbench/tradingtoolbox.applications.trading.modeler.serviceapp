@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B1723BF-BA4E-43DD-8373-BC113CAB1451}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingToolbox.Applications.Trading.Modeler.ServiceApp", "TradingToolbox.Applications.Trading.Modeler.ServiceApp.csproj", "{3B1C9377-E0AA-454B-B7DD-951050436B0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B1C9377-E0AA-454B-B7DD-951050436B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1C9377-E0AA-454B-B7DD-951050436B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B1C9377-E0AA-454B-B7DD-951050436B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B1C9377-E0AA-454B-B7DD-951050436B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2E86F42-EC01-442A-B0A5-97C4039F69FB}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 5.0.0
+	EndGlobalSection
+EndGlobal
