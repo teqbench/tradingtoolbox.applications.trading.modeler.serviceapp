@@ -14,9 +14,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="7.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.10" />
-    <PackageReference Include="TradingToolbox.System.Cors" Version="5.0.0" />
-    <PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Models" Version="5.0.0" />
-    <PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services" Version="5.0.0" />
+    <PackageReference Include="TradingToolbox.System.Cors" Version="5.0.1" />
+    <PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Models" Version="5.0.1" />
+    <PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
