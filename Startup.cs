@@ -6,8 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using TradingToolbox.System.Cors;
-using TradingToolbox.System.Data.NoSql.MongoDB.Repository.Config;
+using TeqBench.System.Cors;
+using TeqBench.System.Data.NoSql.MongoDB.Repository.Config;
 using nsPositionModeling = TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services.PositionModeling;
 
 namespace TradingToolbox.Applications.Trading.Modeler.ServiceApp

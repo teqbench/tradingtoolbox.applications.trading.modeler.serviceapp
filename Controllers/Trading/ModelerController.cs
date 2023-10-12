@@ -65,7 +65,7 @@ namespace TradingToolbox.Applications.Trading.Modeler.ServiceApp.Controllers
             try
             {
                 // For now, just force sort to be by ListPosition and do here...can move to FindAsync later...
-                // TODO - Add sort capability to FindAsync in TradingToolbox.System.Data.NoSql.MongoDb.Repository
+                // TODO - Add sort capability to FindAsync in TeqBench.System.Data.NoSql.MongoDb.Repository
                 items = (await _mongoDbService.PositionModelRepository.FindAsync(_ => true)).OrderBy(item => item.ListPosition);
             }
             catch (Exception e)
