@@ -11,5 +11,5 @@ on:
 jobs:
   common_project_card_validation:
     name: Invoke Shared Project Create Release and Deploy .NET Service App Workflow
-    uses: teqbench/ci-cd-workflows/.github/workflows/shared-project-ci-cd-release-deploy-dotnet-service-app.yml
+    uses: teqbench/ci-cd-workflows/.github/workflows/shared-project-ci-cd-release-deploy-dotnet-service-app.yml@main
     secrets: inherit
