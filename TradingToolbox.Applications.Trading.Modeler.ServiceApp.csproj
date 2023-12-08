@@ -31,7 +31,7 @@
 		<VersionSuffix Condition="'$(Configuration)' == 'Debug'">dev</VersionSuffix>
 	</PropertyGroup>
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<NeutralLanguage>en-US</NeutralLanguage>
@@ -46,17 +46,20 @@
 		<AssemblyName>TradingToolbox.Applications.Trading.Modeler.ServiceApp</AssemblyName>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <DebugType>portable</DebugType>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	  <DebugType>portable</DebugType>
+	  <WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="7.0.12" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.12" />
-		<PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Models" Version="1.1.0" />
-		<PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services" Version="1.1.0" />
-		<PackageReference Include="TeqBench.System.Cors" Version="1.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
+		<PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Models" Version="2.0.0" />
+		<PackageReference Include="TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services" Version="2.0.0" />
+		<PackageReference Include="TeqBench.System.Cors" Version="2.0.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Remove="README.md" />
