@@ -15,19 +15,20 @@ API service for trading position modeler database operations.
 > In order to access the TeqBench's package registry on GitHub, a personal access token needs to be created with the appropriate scopes and Visual Studio configured to use it. See the [TeqBench Organization's README](https://github.com/teqbench) which outlines how to create a PAT and configure Visual Studio to use it.
 
 ## Tooling
-- .NET 7.0.x
 - Visual Studio
+- .NET 8.0.x
+    - In the Visual Studio, navigate to Preferences > Other > Preview Features to enable using the .NET 8 SDK, i.e. check the checkbox for the option `Use the NET 8 SDK if installed (requires restart)`.
 
 ## Dependencies
 > [!NOTE]
 > Referenced/restored via the project file
 
-- Microsoft.AspNetCore.JsonPatch, 7.0.12
-- Microsoft.AspNetCore.Mvc.NewtonsoftJson, 7.0.12
+- Microsoft.AspNetCore.JsonPatch, 8.0.0
+- Microsoft.AspNetCore.Mvc.NewtonsoftJson, 8.0.0
 - Swashbuckle.AspNetCore, 6.5.0
-- TeqBench.System.Cors, 1.0.0
-- TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Models, 1.1.0
-- TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services, 1.1.0
+- TeqBench.System.Cors, 2.0.0
+- TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Models, 2.0.0
+- TradingToolbox.Trading.Modeler.Data.NoSql.MongoDB.Services, 2.0.0
 
 # DevOps
 ## Configurations
@@ -44,7 +45,7 @@ API service for trading position modeler database operations.
 ## Branches
 - main (production)
 
-## Local - Build, Pack(age) & Deploy
+## Local - Build, Pack(age) & Run
 - To build/pack locally use the "Debug" configuration.
 
 ### Build
@@ -58,7 +59,14 @@ API service for trading position modeler database operations.
   - Build Output
     - Build output for Visual Studio or command line, i.e. assembly, will be found in the "{project}/bin/Debug/" folder.
   
-### Deployment
+### Run
+- To run service applicaiton locally, MongoDB needs to be running in a Docker container locally.
+    - If have not already done so, install [Docker](https://www.docker.com/products/docker-desktop/).
+    - From Terminal prompt:
+        - Pull MongoDB image `docker pull mongo`
+        - Run MongoDB `docker run --name mongodb -d -p 27017:27017 mongo`
+    - Once MongodB is running in a Docker container, start the service application from Visual Studio; the service application will start and display the service (REST) API will be displayed in Swagger UI webpage in browser.
+
 
 ## Cloud - Build & Deploy
 - Cloud based build and deployment requires a pull request and successful merge into the main branch in order to start the release workflow.
