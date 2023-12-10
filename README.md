@@ -18,6 +18,8 @@ API service for trading position modeler database operations.
 - Visual Studio
 - .NET 8.0.x
     - In the Visual Studio, navigate to Preferences > Other > Preview Features to enable using the .NET 8 SDK, i.e. check the checkbox for the option `Use the NET 8 SDK if installed (requires restart)`.
+- Docker
+- MongoDB
 
 ## Dependencies
 > [!NOTE]
