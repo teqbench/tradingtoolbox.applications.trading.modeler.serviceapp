@@ -39,7 +39,7 @@ namespace TradingToolbox.Applications.Trading.Modeler.ServiceApp.Controllers
     /// </summary>
     /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
     [ApiController]
-    [Route("api/tradingtoolbox/trading/[controller]")]
+    [Route("api/teqbench/tradingtoolbox/trading/[controller]")]
     public class ModelerController : ControllerBase
     {
         private readonly IMongoDbService _mongoDbService;
@@ -124,54 +124,56 @@ namespace TradingToolbox.Applications.Trading.Modeler.ServiceApp.Controllers
             return Ok(value);
         }
 
-        /// <summary>
-        /// Updates a single document with field level changes (patches).
-        /// </summary>
-        /// <param name="patchRequest">The patch request to update one position documents with the field level changes/patches.</param>
-        /// <returns>An instance of ObjectResult with the appropriate HTTP status code and list of updated documents.</returns>
-        [HttpPatch("position")]
-        public async Task<IActionResult> Update([FromBody] PatchRequest<PositionModelDocument> patchRequest)
-        {
-            // NOTE: In nearly all examples, patch documents are passed as part of the body and any ID is part of the resource URL.
-            // In this case with more than one ID, necessary to pass both as part of the body; tried to pass one in the header
-            // and the other as part of the body, but was having a heck of a time getting the data out of out of the header on 
-            // the serve side; worked OK when request came from Swagger but from Angular, could not get it to work. Compromised 
-            // solution is current implementation of sending both as part of the body.
+// BV 12/16/23 Appears to be unused, comment out for now.
+// TODO: Eval if actually need this Update method.
+//        /// <summary>
+//        /// Updates a single document with field level changes (patches).
+//        /// </summary>
+//        /// <param name="patchRequest">The patch request to update one position documents with the field level changes/patches.</param>
+//        /// <returns>An instance of ObjectResult with the appropriate HTTP status code and list of updated documents.</returns>
+//        [HttpPatch("position")]
+//        public async Task<IActionResult> Update([FromBody] PatchRequest<PositionModelDocument> patchRequest)
+//        {
+//            // NOTE: In nearly all examples, patch documents are passed as part of the body and any ID is part of the resource URL.
+//            // In this case with more than one ID, necessary to pass both as part of the body; tried to pass one in the header
+//            // and the other as part of the body, but was having a heck of a time getting the data out of out of the header on 
+//            // the serve side; worked OK when request came from Swagger but from Angular, could not get it to work. Compromised 
+//            // solution is current implementation of sending both as part of the body.
 
-            // TODO: Add transactional support to all DB operations
-            // this really should be transactional, but there's some sort of issues w/ running mongo locally (maybe has to do with docker)
+//            // TODO: Add transactional support to all DB operations
+//            // this really should be transactional, but there's some sort of issues w/ running mongo locally (maybe has to do with docker)
 
-            // Do some safety checking on the request param before attemping to process it.
-            if ((patchRequest == null) ||
-                (patchRequest.ids == null) ||
-                (patchRequest.ids.Count() < 1) ||
-                (patchRequest.patchDocument == null))
-            {
-                return StatusCode(StatusCodes.Status400BadRequest);
-            }
+//            // Do some safety checking on the request param before attemping to process it.
+//            if ((patchRequest == null) ||
+//                (patchRequest.ids == null) ||
+//                (patchRequest.ids.Count() < 1) ||
+//                (patchRequest.patchDocument == null))
+//            {
+//                return StatusCode(StatusCodes.Status400BadRequest);
+//            }
 
-            List<PositionModelDocument> values = new List<PositionModelDocument>();
+//            List<PositionModelDocument> values = new List<PositionModelDocument>();
             
-            try
-            {
-#if DEBUG
-                Stopwatch stopwatch = new Stopwatch();
-                stopwatch.Start();
-#endif
-                values = await processPatchRequst(patchRequest);
-#if DEBUG
-                stopwatch.Stop();
-                Console.WriteLine("Elapsed Time: {0} ms", stopwatch.ElapsedMilliseconds);
-#endif
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e);
-            }
+//            try
+//            {
+//#if DEBUG
+//                Stopwatch stopwatch = new Stopwatch();
+//                stopwatch.Start();
+//#endif
+//                values = await processPatchRequst(patchRequest);
+//#if DEBUG
+//                stopwatch.Stop();
+//                Console.WriteLine("Elapsed Time: {0} ms", stopwatch.ElapsedMilliseconds);
+//#endif
+//            }
+//            catch (Exception e)
+//            {
+//                return StatusCode(StatusCodes.Status500InternalServerError, e);
+//            }
 
-            // May change to ONLY return Ok() ... not sure yet of the pros/cons of returning the new values or not, or if even needed...keep for now.
-            return Ok(values);
-        }
+//            // May change to ONLY return Ok() ... not sure yet of the pros/cons of returning the new values or not, or if even needed...keep for now.
+//            return Ok(values);
+//        }
 
         /// <summary>
         /// Updates multiple documents with field level changes (patches).
