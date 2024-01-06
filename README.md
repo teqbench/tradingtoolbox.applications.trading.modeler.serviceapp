@@ -2,7 +2,7 @@
 
 ![Build Status Badge](.badges/build-status.svg) ![Build Number Badge](.badges/build-number.svg) ![Coverage](.badges/code-coverage.svg)
 
-### Overview
+## Overview
 
 API service for trading position modeler database operations.
 
